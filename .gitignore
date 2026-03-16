@@ -1,0 +1,10 @@
+# Saídas de compilação Typst
+*.pdf
+*.png
+*.svg
+
+# Cache local do compilador Typst
+.typst/
+
+# Pacotes locais baixados pelo Typst (cache de preview)
+typst-packages/
