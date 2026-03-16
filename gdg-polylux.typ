@@ -167,7 +167,7 @@
     target: heading.where(level: 1),
     title: none,
   )
-  show outline.entry: it => it.body
+  show outline.entry: it => it
   show outline: it => block(inset: (x: 1em), it)
 
   // Cada seção (heading nível 1) vira um slide-capa próprio.

@@ -27,6 +27,15 @@
 Google Developer Groups Londrina
 ]
 
+#slide[
+== Índice
+
+#context[
+  #set text(fill: gdg-grey)
+  #outline(target: heading.where(level: 1))
+]
+]
+
 // Nova seção (heading nível 1) + primeiro slide (heading nível 2).
 // `= Seção` cria capa automática porque o tema intercepta heading nível 1.
 = Primeira Seção
@@ -39,26 +48,30 @@ com ritmo natural e distribuição visual equilibrada.
 
 #v(0.8em)
 
-#grid(
-  columns: (1fr, 1fr),
-  gutter: 1em,
-  [
-    #set text(weight: "bold", fill: gdg-blue)
-    O que vamos ver
-    #set text(weight: "regular", fill: gdg-grey)
-    - estrutura de um deck
-    - variação de layout
-    - slides de destaque
-  ],
-  [
-    #set text(weight: "bold", fill: gdg-green)
-    Resultado esperado
-    #set text(weight: "regular", fill: gdg-grey)
-    - mensagem clara
-    - leitura rápida
-    - transições suaves
-  ],
-)
+#align(center + horizon)[
+  #block(width: 88%)[
+    #grid(
+      columns: (1fr, 1fr),
+      gutter: 1em,
+      [
+        #set text(weight: "bold", fill: gdg-blue)
+        O que vamos ver
+        #set text(weight: "regular", fill: gdg-grey)
+        - estrutura de um deck
+        - variação de layout
+        - slides de destaque
+      ],
+      [
+        #set text(weight: "bold", fill: gdg-green)
+        Resultado esperado
+        #set text(weight: "regular", fill: gdg-grey)
+        - mensagem clara
+        - leitura rápida
+        - transições suaves
+      ],
+    )
+  ]
+]
 ]
 
 // Outro slide na mesma seção.
@@ -86,33 +99,37 @@ não para repetir conteúdo da lista anterior.
 #slide[
 == Exemplo de disposição equilibrada
 
-#grid(
-  columns: (3fr, 2fr),
-  gutter: 1.2em,
-  [
-    #set text(weight: "bold", fill: gdg-blue)
-    Mensagem principal
-    #set text(weight: "regular", fill: gdg-grey)
-    - Comece com contexto curto
-    - Traga 2 ou 3 pontos de apoio
-    - Feche com uma ação concreta
-  ],
-  [
-    #rect(
-      fill: luma(245),
-      radius: 8pt,
-      inset: 0.8em,
+#align(center + horizon)[
+  #block(width: 88%)[
+    #grid(
+      columns: (3fr, 2fr),
+      gutter: 1.2em,
       [
-        #set text(weight: "bold", fill: gdg-red)
-        Checklist
+        #set text(weight: "bold", fill: gdg-blue)
+        Mensagem principal
         #set text(weight: "regular", fill: gdg-grey)
-        - título curto
-        - boa margem
-        - contraste claro
+        - Comece com contexto curto
+        - Traga 2 ou 3 pontos de apoio
+        - Feche com uma ação concreta
+      ],
+      [
+        #rect(
+          fill: luma(245),
+          radius: 8pt,
+          inset: 0.8em,
+          [
+            #set text(weight: "bold", fill: gdg-red)
+            Checklist
+            #set text(weight: "regular", fill: gdg-grey)
+            - título curto
+            - boa margem
+            - contraste claro
+          ],
+        )
       ],
     )
-  ],
-)
+  ]
+]
 ]
 
 #slide[
