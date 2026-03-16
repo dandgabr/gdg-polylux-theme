@@ -123,6 +123,37 @@ não para repetir conteúdo da lista anterior.
 - #text(weight: "bold")[centered-slide] funciona bem para transição e fechamento
 ]
 
+#slide[
+== QR Code com estilo GDG
+
+#set text(fill: gdg-grey)
+Use o helper abaixo para manter o QR Code alinhado com a identidade visual do tema.
+
+#v(0.8em)
+#align(center)[
+  #gdg-qr-code("https://gdg.community.dev", width: 6cm)
+]
+]
+
+#slide[
+== Código com estilo Codly GDG
+
+#set text(fill: gdg-grey)
+Blocos de código já seguem o estilo visual do tema quando você usa \#show: theme.with(...).
+
+#v(0.2em)
+
+````C
+#include <stdio.h> // Inclui a biblioteca de entrada e saída padrão
+
+int main() {
+    // printf é usada para exibir o texto na tela
+    printf("Hello, GDG!\n");                
+    return 0; // Indica que o programa terminou com sucesso
+}
+````
+]
+
 // Slide centrado para encerramento.
 // Bom para abertura, transição entre blocos e call-to-action final.
 #centered-slide[

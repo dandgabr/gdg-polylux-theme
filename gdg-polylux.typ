@@ -31,6 +31,8 @@
 // numeração e seção atual na série 0.4.
 #import "@preview/polylux:0.4.0": *
 #import "@preview/polylux:0.4.0": slide as polylux-slide, toolbox
+#import "@preview/cades:0.3.1": qr-code as cades-qr-code
+#import "@preview/codly:1.3.0": codly, codly-init
 
 // ---------------------------
 // Paleta de cores GDG
@@ -73,6 +75,40 @@
   body,
 )
 
+// Preset de estilo para QR Code usando as cores base do tema GDG.
+// Pode ser aplicado em chamadas diretas da cades com `..gdg-qrcode-style`.
+#let gdg-qrcode-style = (
+  color: gdg-blue,
+  background: white,
+  error-correction: "M",
+)
+
+// Helper pronto para gerar QR Code com o preset GDG.
+// Exemplo:
+//   #gdg-qr-code("https://gdg.community.dev", width: 2.8cm)
+#let gdg-qr-code(
+  content,
+  width: auto,
+  height: auto,
+  style: gdg-qrcode-style,
+) = {
+  cades-qr-code(
+    content,
+    width: width,
+    height: height,
+    ..style,
+  )
+}
+
+// Preset de estilo para blocos de código com Codly.
+// Pode ser aplicado em chamadas diretas com `#codly(..gdg-codly-style)`.
+#let gdg-codly-style = (
+  stroke: 1pt + gdg-blue,
+  zebra-fill: luma(246),
+  display-icon: false,
+  smart-indent: true,
+)
+
 // ---------------------------
 // Tema principal
 // ---------------------------
@@ -103,7 +139,7 @@
   )
   set text(
     font: "Roboto",
-    size: 24pt,
+    size: 20pt,
     fill: foreground,
   )
 
@@ -122,6 +158,9 @@
 
   // Notas de rodapé menores.
   show footnote.entry: set text(size: 0.6em)
+
+  // Blocos de código levemente menores que o texto base dos slides.
+  show raw.where(block: true): set text(size: 0.82em)
 
   // Outline baseado em headings de nível 1 (seções).
   set outline(
@@ -156,6 +195,10 @@
   // Atualiza texto de rodapé global a partir do parâmetro footer.
   gdg-footer.update(footer)
 
+  // Inicializa e aplica o estilo global de blocos de código (Codly).
+  show: codly-init.with()
+  codly(..gdg-codly-style)
+
   // Corpo do documento/slides.
   body
 }
@@ -170,6 +213,9 @@
 // - title-slide(body)
 // - focus-slide(background, foreground, body)
 // - centered-slide(body)
+// - gdg-qrcode-style (preset para `cades.qr-code`)
+// - gdg-qr-code(content, width, height, style)
+// - gdg-codly-style (preset para `codly`)
 
 // Parâmetros principais de `theme`:
 // - aspect-ratio: formato de apresentação (ex.: "16-9").
