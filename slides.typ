@@ -28,6 +28,14 @@ Google Developer Groups Londrina
 ]
 
 #slide[
+#set page(
+  header: block[
+    #v(0.4em)
+    #align(center)[#gdg-color-strip()]
+  ],
+  header-ascent: 1.2em,
+)
+
 == Índice
 
 #context[
@@ -90,8 +98,7 @@ com ritmo natural e distribuição visual equilibrada.
 #focus-slide[
 #text(weight: "bold")[Dica prática]
 #v(0.5em)
-Use slide de foco para reforçar mensagem-chave,
-não para repetir conteúdo da lista anterior.
+Use slide de foco para reforçar mensagem-chave, não para repetir conteúdo da lista anterior.
 ]
 
 = Segunda Seção
@@ -148,7 +155,7 @@ Use o helper abaixo para manter o QR Code alinhado com a identidade visual do te
 
 #v(0.8em)
 #align(center)[
-  #gdg-qr-code("https://gdg.community.dev", width: 6cm)
+  #gdg-qr-code("https://gdg.londrina.dev/", width: 6cm)
 ]
 ]
 
