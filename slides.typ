@@ -178,6 +178,48 @@ int main() {
 ````
 ]
 
+#slide[
+== Exemplo de tabela
+
+#set text(fill: gdg-grey)
+Uma tabela simples para comparar opções de formato de conteúdo.
+
+#v(0.6em)
+
+#table(
+  columns: (2fr, 1fr, 1fr),
+  inset: 8pt,
+  stroke: luma(220),
+  [#text(weight: "bold", fill: gdg-blue)[Formato]],
+  [#text(weight: "bold", fill: gdg-blue)[Tempo]],
+  [#text(weight: "bold", fill: gdg-blue)[Impacto]],
+
+  [Demo ao vivo], [10 min], [Alto],
+  [Estudo de caso], [8 min], [Médio],
+  [Q&A], [5 min], [Alto],
+)
+]
+
+#slide[
+== Exemplo de equação matemática
+
+#set text(fill: gdg-grey)
+Equação para representar crescimento composto ao longo do tempo.
+
+#v(0.8em)
+
+#align(center)[
+  $A = P (1 + r)^n$
+]
+
+#v(0.6em)
+
+- $A$: valor final
+- $P$: valor inicial
+- $r$: taxa de crescimento
+- $n$: número de períodos
+]
+
 // Slide centrado para encerramento.
 // Bom para abertura, transição entre blocos e call-to-action final.
 #centered-slide[
