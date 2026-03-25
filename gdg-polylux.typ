@@ -103,10 +103,53 @@
 // Preset de estilo para blocos de código com Codly.
 // Pode ser aplicado em chamadas diretas com `#codly(..gdg-codly-style)`.
 #let gdg-codly-style = (
-  stroke: 1pt + gdg-blue,
-  zebra-fill: luma(246),
-  display-icon: false,
+  default-color: gdg-blue,
+  radius: 0.38em,
+  inset: 0.42em,
+  fill: rgb("#F8FBFF"),
+  zebra-fill: rgb("#F1F7FF"),
+  stroke: 1pt + rgb("#AECBFA"),
+  lang-stroke: (lang) => 0.6pt + gdg-blue,
+  lang-fill: (lang) => rgb("#E8F0FE"),
+  number-placement: "outside",
+  number-align: right + horizon,
+  number-format: (number) => text(fill: gdg-blue, size: 0.82em)[#number],
+  display-icon: true,
   smart-indent: true,
+)
+
+// Preset de estilo para tabelas no visual GDG.
+// Exemplo:
+//   #table(columns: (auto, auto, 1fr), ..gdg-table-style, ...)
+#let gdg-table-style = (
+  inset: (x: 10pt, y: 8pt),
+  align: horizon,
+  stroke: (_, row) => {
+    if row == 0 {
+      (
+        top: 1pt + gdg-blue,
+        left: 0.9pt + gdg-blue,
+        right: 0.9pt + rgb("#8AB4F8"),
+        bottom: 1.2pt + rgb("#8AB4F8"),
+      )
+    } else {
+      (
+        top: 0.35pt + rgb("#F3F8FF"),
+        left: 0.35pt + rgb("#F3F8FF"),
+        right: 0.5pt + rgb("#D2E3FC"),
+        bottom: 0.85pt + rgb("#AECBFA"),
+      )
+    }
+  },
+  fill: (_, row) => {
+    if row == 0 {
+      rgb("#E8F0FE")
+    } else if calc.odd(row) {
+      rgb("#F6F9FF")
+    } else {
+      white
+    }
+  },
 )
 
 // ---------------------------
@@ -216,6 +259,7 @@
 // - gdg-qrcode-style (preset para `cades.qr-code`)
 // - gdg-qr-code(content, width, height, style)
 // - gdg-codly-style (preset para `codly`)
+// - gdg-table-style (preset para `table`)
 
 // Parâmetros principais de `theme`:
 // - aspect-ratio: formato de apresentação (ex.: "16-9").
